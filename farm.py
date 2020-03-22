@@ -39,6 +39,8 @@ class DairyAnimal(Cattle):
         self.milkness = random.randint(1, 10)
 
     def benefit(self):
+        if not self.satisfied:
+            return 'Нечего собирать! Сначала надо накормить!'
         self.satisfied = False
         return f'Удой {self.milkness} л'
 
@@ -49,6 +51,8 @@ class Fowl(Cattle):
         self.eggs_count = random.randint(1, 10)
 
     def benefit(self):
+        if not self.satisfied:
+            return 'Нечего собирать! Сначала надо накормить!'
         self.satisfied = False
         return f'Собрали {self.eggs_count} яиц'
 
@@ -59,6 +63,8 @@ class Sheep(Cattle):
         self.wool_volume = random.randint(1, 10)
 
     def benefit(self):
+        if not self.satisfied:
+            return 'Нечего собирать! Сначала надо накормить!'
         self.satisfied = False
         return f'Состригли {self.wool_volume} ус.ед шерсти'
 
